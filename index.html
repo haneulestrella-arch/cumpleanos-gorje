@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Jorge ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;display:flex;align-items:center;
+  justify-content:center;text-align:center;font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#ffe0eb,#fff0f5,#ffd1dc);
+  color:#a32250;padding:20px;overflow-x:hidden
+}
+.card{max-width:420px;width:100%;padding:28px 18px}
+h1{font-size:30px}
+p{font-size:18px;line-height:1.6}
+.gift{
+  position:relative;width:170px;height:145px;margin:45px auto 30px;
+  cursor:pointer;animation:float 2s infinite ease-in-out
+}
+.box{
+  position:absolute;bottom:0;width:170px;height:105px;
+  background:#ff477e;border-radius:8px;box-shadow:0 9px 20px #d65b8350
+}
+.box:before{content:"";position:absolute;left:65px;width:35px;height:100%;
+background:#ffe58f}
+.lid{
+  position:absolute;top:28px;left:-9px;width:188px;height:35px;
+  background:#f52d6c;border-radius:7px;transition:.6s;z-index:2
+}
+.lid:before{content:"";position:absolute;left:74px;width:35px;height:100%;
+background:#ffe58f}
+.bow{
+  position:absolute;top:0;left:65px;width:40px;height:35px;
+  border:10px solid #ffe58f;border-radius:50% 50% 0 50%;
+  transform:rotate(25deg);z-index:3
+}
+.bow:after{
+  content:"";position:absolute;width:40px;height:35px;
+  border:10px solid #ffe58f;border-radius:50% 50% 50% 0;
+  left:13px;top:-10px;transform:rotate(-55deg)
+}
+.gift.open .lid{transform:translateY(-65px) rotate(-18deg)}
+.gift.open .bow{transform:translateY(-65px) rotate(25deg)}
+button{
+  border:0;border-radius:25px;padding:14px 24px;font-size:17px;
+  background:#e82e6b;color:white;font-weight:bold;cursor:pointer;
+  box-shadow:0 5px 12px #d65b8340
+}
+#message{display:none;margin-top:25px;background:#ffffffb8;
+padding:20px;border-radius:18px}
+.heart{font-size:25px}
+@keyframes float{50%{transform:translateY(-8px)}}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="heart">💗 💗 💗</div>
+  <h1>Una sorpresa para ti, Jorge ❤️</h1>
+  <p>Hay un regalito esperando por ti...</p>
+  <div class="gift" id="gift" onclick="openGift()">
+    <div class="bow"></div>
+    <div class="lid"></div>
+    <div class="box"></div>
+  </div>
+  <button onclick="openGift()">🎁 Abrir mi regalo</button>
+  <section id="message">
+    <h2>¡Feliz cumpleaños, mi Jorge! 🎂</h2>
+    <p>Quisiera estar cerquita de ti para darte un abrazo enorme. ❤️</p>
+    <p>Mientras llega ese momento, hice esta pequeña sorpresa con mucho amor para ti. 🥹💕</p>
+    <div class="heart">Te quiero mucho 💖</div>
+  </section>
+</main>
+<script>
+function openGift(){
+  document.getElementById('gift').classList.add('open');
+  document.getElementById('message').style.display='block';
+}
+</script>
+</body>
+  </html>
